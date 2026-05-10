@@ -1,0 +1,46 @@
+==================================================
+  🚀  ECRIO_BMS Flask To-Do App
+  📌  Open: http://127.0.0.1:5000
+==================================================
+
+ * Serving Flask app 'app'
+ * Debug mode: on
+ * Running on http://127.0.0.1:5000
+ * Restarting with stat
+ * Debugger is active!
+
+--- Browser Interactions ---
+
+[User visits http://127.0.0.1:5000]
+  → Page loads with empty task list
+  → Shows: "All clear! No tasks yet. Add one above."
+
+[User types "Buy groceries" → clicks Add Task]
+  → Flash: ✅ Task "Buy groceries" added successfully!
+  → Task appears in list with ○ pending icon
+  → Stats Bar: Total: 1 | Done: 0 | Pending: 1
+
+[User types "Study Flask" → clicks Add Task]
+  → Flash: ✅ Task "Study Flask" added successfully!
+  → Stats Bar: Total: 2 | Done: 0 | Pending: 2
+
+[User clicks ✔ Done on "Buy groceries"]
+  → Flash: 🔄 Task marked as completed.
+  → Task shows strikethrough, muted style
+  → Stats Bar: Total: 2 | Done: 1 | Pending: 1
+
+[User clicks ↩ Undo on "Buy groceries"]
+  → Flash: 🔄 Task marked as reopened.
+  → Task returns to normal style
+
+[User submits empty task]
+  → Flash: ⚠️ Task cannot be empty. Please type something!
+  → No task added
+
+[User clicks 🗑 Delete on "Study Flask" → confirms]
+  → Flash: 🗑️ Task "Study Flask" deleted.
+  → Task removed from list
+
+[User clicks 🧹 Clear All Tasks → confirms]
+  → Flash: 🧹 Cleared all 1 task(s).
+  → Empty state shown again

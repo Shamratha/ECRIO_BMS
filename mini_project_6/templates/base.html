@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}ECRIO_BMS To-Do{% endblock %}</title>
+
+  <!-- Link to our custom stylesheet in the static/ folder -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  <!-- ── Navigation Bar ──────────────────────────────────────── -->
+  <header class="navbar">
+    <div class="navbar-brand">
+      📝 ECRIO_BMS To-Do
+    </div>
+    <span class="navbar-subtitle">Mini Project 6 — Flask App</span>
+  </header>
+
+  <!-- ── Flash Messages ─────────────────────────────────────── -->
+  <!--
+    Flask's flash() stores one-time messages in the session.
+    get_flashed_messages(with_categories=True) retrieves them.
+    Each message has a category: success, warning, info, danger.
+  -->
+  <div class="flash-container">
+    {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="flash flash-{{ category }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+
+  <!-- ── Page Content (child templates inject here) ─────────── -->
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="footer">
+    <p>ECRIO_BMS &copy; 2024 — Built with Flask &amp; Python 🐍</p>
+  </footer>
+
+</body>
+</html>

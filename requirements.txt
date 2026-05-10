@@ -1,0 +1,13 @@
+# ─── ECRIO_BMS — Top-level dependencies ──────────────────────────────────────
+# Install per-project requirements inside each mini_project_X/ folder.
+# This file lists everything across all projects for reference.
+
+# Projects 3 & 5
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Project 6
+Flask>=3.0.0
+
+# Project 7
+paho-mqtt>=2.0.0

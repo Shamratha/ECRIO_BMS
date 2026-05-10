@@ -1,0 +1,2 @@
+# Mini Project 1 — no third-party dependencies
+# Pure Python 3.10+

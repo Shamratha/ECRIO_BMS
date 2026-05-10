@@ -1,0 +1,2 @@
+# Mini Project 2 — no third-party dependencies
+# Pure Python 3.10+ stdlib (logging, unittest, unittest.mock)

@@ -1,0 +1,89 @@
+============================================================
+  ⚙️   ECRIO_BMS — Advanced Data Processing
+============================================================
+  📝  Created sample file: data/sample_data.txt
+
+  ───────────────────────────────────────────────────────
+  📌  File Reading — Line by Line
+  ───────────────────────────────────────────────────────
+  Lines read: 5
+  [1] apple banana cherry apple date elderberry
+  [2] fig grape honeydew fig apple banana
+  [3] kiwi lemon mango kiwi fig
+  [4] nectarine orange papaya quince
+  [5] raspberry strawberry tangerine raspberry
+
+  ───────────────────────────────────────────────────────
+  📌  List Operations
+  ───────────────────────────────────────────────────────
+  original_len         : 20
+  after_append         : 21
+  sorted_first_5       : [1, 2, 3, 4, 5]
+  total_sum            : 309
+  max                  : 99
+  min                  : 1
+
+  ───────────────────────────────────────────────────────
+  📌  Tuple Operations
+  ───────────────────────────────────────────────────────
+  length          : 7
+  first           : 10
+  last            : 50
+  count_10        : 3
+  sliced          : (10, 20, 10)
+  is_tuple        : True
+
+  ───────────────────────────────────────────────────────
+  📌  Set Operations
+  ───────────────────────────────────────────────────────
+  set_a                        : {1, 2, 3, 4, 5}
+  set_b                        : {3, 4, 5, 6, 7}
+  union                        : {1, 2, 3, 4, 5, 6, 7}
+  intersection                 : {3, 4, 5}
+  difference_a_minus_b         : {1, 2}
+  symmetric_difference         : {1, 2, 6, 7}
+
+  ───────────────────────────────────────────────────────
+  📌  Dictionary Operations — Word Frequency
+  ───────────────────────────────────────────────────────
+  Unique words  : 19
+  Most common   : 'apple'
+  Duplicates    : {'apple': 3, 'banana': 2, 'fig': 3, 'kiwi': 2, 'raspberry': 2}
+
+  ───────────────────────────────────────────────────────
+  📌  Stack (LIFO) Demo
+  ───────────────────────────────────────────────────────
+  Pushed → Task-A  |  Stack: Stack(['Task-A'])
+  Pushed → Task-B  |  Stack: Stack(['Task-A', 'Task-B'])
+  Pushed → Task-C  |  Stack: Stack(['Task-A', 'Task-B', 'Task-C'])
+
+  Popped ← Task-C  |  Stack: Stack(['Task-A', 'Task-B'])
+  Popped ← Task-B  |  Stack: Stack(['Task-A'])
+  Popped ← Task-A  |  Stack: Stack([])
+
+  Attempting pop on empty stack...
+  ✅  Caught StackUnderflowError: Cannot pop from an empty stack.
+
+  ───────────────────────────────────────────────────────
+  📌  Queue (FIFO) Demo
+  ───────────────────────────────────────────────────────
+  Enqueued → Job-1  |  Queue: Queue(['Job-1'])
+  Enqueued → Job-2  |  Queue: Queue(['Job-1', 'Job-2'])
+  Enqueued → Job-3  |  Queue: Queue(['Job-1', 'Job-2', 'Job-3'])
+
+  Dequeued ← Job-1  |  Queue: Queue(['Job-2', 'Job-3'])
+  Dequeued ← Job-2  |  Queue: Queue(['Job-3'])
+  Dequeued ← Job-3  |  Queue: Queue([])
+
+  Attempting dequeue on empty queue...
+  ✅  Caught QueueUnderflowError: Cannot dequeue from an empty queue.
+
+  ───────────────────────────────────────────────────────
+  📌  Assertions Demo
+  ───────────────────────────────────────────────────────
+  All assertions passed for x = 42
+  Assertion passed: data list has 3 items
+
+============================================================
+  ✅  All demos complete! Check logs/data_processing.log
+============================================================

@@ -1,0 +1,45 @@
+=============================================
+       🧮  ECRIO_BMS CALCULATOR  🧮
+=============================================
+
+  Welcome! This calculator supports +, -, *, /
+
+  Select an operation:
+    [1] Addition       (+)
+    [2] Subtraction    (-)
+    [3] Multiplication (*)
+    [4] Division       (/)
+    [5] Exit
+---------------------------------------------
+  Your choice: 1
+
+  ── Addition       (+) ──
+  Enter first number : 25
+  Enter second number: 17.5
+
+  ✅  Result: 25.0 + 17.5 = 42.5
+
+  Select an operation:
+  Your choice: 4
+
+  ── Division       (/) ──
+  Enter first number : 10
+  Enter second number: 0
+
+  ❌  Error: Division by zero is not allowed.
+
+  Select an operation:
+  Your choice: 4
+
+  ── Division       (/) ──
+  Enter first number : 10
+  Enter second number: 4
+
+  ✅  Result: 10.0 / 4.0 = 2.5
+
+  Select an operation:
+  Your choice: abc
+  ⚠️  Please enter a number between 1 and 5.
+  Your choice: 5
+
+  👋  Thanks for using ECRIO_BMS Calculator. Goodbye!

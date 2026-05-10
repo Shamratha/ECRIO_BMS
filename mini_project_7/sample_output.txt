@@ -1,0 +1,66 @@
+═══════════════════════════════════════════════════════
+TERMINAL 1 — subscriber.py
+═══════════════════════════════════════════════════════
+
+=======================================================
+  📻  ECRIO_BMS MQTT Subscriber
+  Broker : test.mosquitto.org:1883
+  Topic  : ecrio/bms/messages
+=======================================================
+
+2024-05-10 10:00:00 | INFO     | Connecting to test.mosquitto.org:1883 ...
+2024-05-10 10:00:01 | INFO     | ✅  Connected to broker: test.mosquitto.org:1883
+2024-05-10 10:00:01 | INFO     | 👂  Subscribed to topic: 'ecrio/bms/messages'
+2024-05-10 10:00:01 | INFO     | Waiting for messages... (Press Ctrl+C to stop)
+2024-05-10 10:00:01 | INFO     | ───────────────────────────────────────────────
+
+  ┌─ Message #1 received at 2024-05-10 10:00:05
+  │  Topic   : ecrio/bms/messages
+  │  QoS     : 1
+  └─ Payload : [2024-05-10 10:00:05] Hello from ECRIO_BMS Publisher! 🚀
+
+  ┌─ Message #2 received at 2024-05-10 10:00:08
+  │  Topic   : ecrio/bms/messages
+  │  QoS     : 1
+  └─ Payload : [2024-05-10 10:00:08] Temperature: 34.7°C
+
+  ┌─ Message #3 received at 2024-05-10 10:00:11
+  │  Topic   : ecrio/bms/messages
+  │  QoS     : 1
+  └─ Payload : [2024-05-10 10:00:11] MQTT is a lightweight publish-subscribe protocol.
+
+  ┌─ Message #4 received at 2024-05-10 10:00:14
+  │  Topic   : ecrio/bms/messages
+  │  QoS     : 1
+  └─ Payload : [2024-05-10 10:00:14] Device status: ONLINE ✅
+
+^C
+2024-05-10 10:00:15 | INFO     | 🛑  Subscriber stopped. Total messages received: 4
+2024-05-10 10:00:15 | INFO     | Disconnected cleanly. Goodbye!
+
+
+═══════════════════════════════════════════════════════
+TERMINAL 2 — publisher.py
+═══════════════════════════════════════════════════════
+
+=======================================================
+  📡  ECRIO_BMS MQTT Publisher
+  Broker  : test.mosquitto.org:1883
+  Topic   : ecrio/bms/messages
+  Interval: every 3 seconds
+=======================================================
+
+2024-05-10 10:00:03 | INFO     | Connecting to test.mosquitto.org:1883 ...
+2024-05-10 10:00:04 | INFO     | ✅  Connected to broker: test.mosquitto.org:1883
+2024-05-10 10:00:04 | INFO     | 📤  Publishing to topic: 'ecrio/bms/messages'
+2024-05-10 10:00:04 | INFO     | ───────────────────────────────────────────────
+2024-05-10 10:00:04 | INFO     | Starting to publish. Press Ctrl+C to stop.
+
+2024-05-10 10:00:05 | INFO     | [MSG #1] Published → [2024-05-10 10:00:05] Hello from ECRIO_BMS Publisher! 🚀
+2024-05-10 10:00:08 | INFO     | [MSG #2] Published → [2024-05-10 10:00:08] Temperature: 34.7°C
+2024-05-10 10:00:11 | INFO     | [MSG #3] Published → [2024-05-10 10:00:11] MQTT is a lightweight publish-subscribe protocol.
+2024-05-10 10:00:14 | INFO     | [MSG #4] Published → [2024-05-10 10:00:14] Device status: ONLINE ✅
+
+^C
+2024-05-10 10:00:15 | INFO     | 🛑  Publisher stopped by user after 4 message(s).
+2024-05-10 10:00:15 | INFO     | Disconnected cleanly. Goodbye!

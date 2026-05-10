@@ -1,0 +1,78 @@
+=======================================================
+  💰  ECRIO_BMS Transaction Management System
+=======================================================
+
+  📈  INCOME TRANSACTIONS
+  ──────────────────────────────────────────────────
+  Type     : Income
+  Amount   : ₹75,000.00
+  Category : Salary
+  Date     : 2024-05-01
+  ──────────────────────────────────────────────────
+  Source   : Tech Corp Pvt Ltd
+  ──────────────────────────────────────────────────
+  ──────────────────────────────────────────────────
+  Type     : Income
+  Amount   : ₹12,500.00
+  Category : Freelance
+  Date     : 2024-05-15
+  ──────────────────────────────────────────────────
+  Source   : Upwork Client
+  ──────────────────────────────────────────────────
+
+  📉  EXPENSE TRANSACTIONS
+  ──────────────────────────────────────────────────
+  Type     : Expense
+  Amount   : ₹18,000.00
+  Category : Rent
+  Date     : 2024-05-05
+  ──────────────────────────────────────────────────
+  Vendor   : Landlord
+  ──────────────────────────────────────────────────
+  ──────────────────────────────────────────────────
+  Type     : Expense
+  Amount   : ₹3,450.75
+  Category : Groceries
+  Date     : 2024-05-10
+  ──────────────────────────────────────────────────
+  Vendor   : Big Basket
+  ──────────────────────────────────────────────────
+
+  📊  MONTHLY SUMMARY
+  ──────────────────────────────────────────────────
+  Total Income  : ₹  87,500.00
+  Total Expense : ₹  21,450.75
+  Net Balance   : ₹  66,049.25  ✅
+  ──────────────────────────────────────────────────
+
+  ⚠️   ERROR HANDLING DEMO
+  ──────────────────────────────────────────────────
+  [Negative amount] → Caught: Amount must be positive, got: -500.0
+  [Non-numeric amount] → Caught: Amount must be a number, got: 'abc'
+  [Empty category]  → Caught: Category must be a non-empty string, got: ''
+  [Zero amount]     → Caught: Amount must be positive, got: 0.0
+
+  ✅  All done. Check logs/transactions.log for full details.
+
+---------- Unit Test Output ----------
+test_amount_is_float (tests.test_transaction.TestTransaction) ... ok
+test_category_stripped (tests.test_transaction.TestTransaction) ... ok
+test_default_date_is_today (tests.test_transaction.TestTransaction) ... ok
+test_empty_category_raises (tests.test_transaction.TestTransaction) ... ok
+test_negative_amount_raises (tests.test_transaction.TestTransaction) ... ok
+test_non_numeric_amount_raises (tests.test_transaction.TestTransaction) ... ok
+test_str_representation (tests.test_transaction.TestTransaction) ... ok
+test_valid_creation (tests.test_transaction.TestTransaction) ... ok
+test_whitespace_category_raises (tests.test_transaction.TestTransaction) ... ok
+test_zero_amount_raises (tests.test_transaction.TestTransaction) ... ok
+test_expense_creation (tests.test_transaction.TestExpense) ... ok
+test_expense_default_vendor (tests.test_transaction.TestExpense) ... ok
+test_expense_is_transaction (tests.test_transaction.TestExpense) ... ok
+test_income_creation (tests.test_transaction.TestIncome) ... ok
+test_income_invalid_amount (tests.test_transaction.TestIncome) ... ok
+test_income_is_transaction (tests.test_transaction.TestIncome) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.012s
+
+OK

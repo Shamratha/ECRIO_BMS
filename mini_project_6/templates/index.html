@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block title %}To-Do List — ECRIO_BMS{% endblock %}
+
+{% block content %}
+
+<!-- ── Page Heading ──────────────────────────────────────────────── -->
+<div class="page-header">
+  <h1>📋 My To-Do List</h1>
+  <p class="subtitle">Stay organised, stay productive!</p>
+</div>
+
+<!-- ── Add Task Form ─────────────────────────────────────────────── -->
+<!--
+  action="{{ url_for('add_task') }}" → Flask builds the URL /add for us.
+  method="POST"                       → Form data sent securely in body.
+-->
+<div class="card form-card">
+  <form action="{{ url_for('add_task') }}" method="POST" class="add-form">
+    <input
+      type="text"
+      name="task"
+      placeholder="✏️  What do you need to do?"
+      class="task-input"
+      maxlength="200"
+      autofocus
+    />
+    <button type="submit" class="btn btn-primary">Add Task</button>
+  </form>
+</div>
+
+<!-- ── Task Stats Bar ────────────────────────────────────────────── -->
+{% set total    = tasks | length %}
+{% set done_cnt = tasks | selectattr('done') | list | length %}
+{% set pending  = total - done_cnt %}
+
+{% if total > 0 %}
+<div class="stats-bar">
+  <span class="stat">📦 Total: <strong>{{ total }}</strong></span>
+  <span class="stat">✅ Done: <strong>{{ done_cnt }}</strong></span>
+  <span class="stat">⏳ Pending: <strong>{{ pending }}</strong></span>
+</div>
+{% endif %}
+
+<!-- ── Task List ─────────────────────────────────────────────────── -->
+<div class="task-list">
+
+  {% if tasks %}
+    <!-- Show each task in its own card -->
+    {% for task in tasks %}
+    <div class="task-card {% if task.done %}task-done{% endif %}">
+
+      <!-- Task text (left side) -->
+      <span class="task-text">
+        {% if task.done %}
+          <span class="done-icon">✔</span>
+        {% else %}
+          <span class="pending-icon">○</span>
+        {% endif %}
+        {{ task.text }}
+      </span>
+
+      <!-- Action buttons (right side) -->
+      <div class="task-actions">
+
+        <!-- Toggle complete/incomplete -->
+        <form action="{{ url_for('toggle_task', task_id=task.id) }}" method="POST">
+          <button type="submit" class="btn btn-toggle"
+                  title="{% if task.done %}Mark Incomplete{% else %}Mark Complete{% endif %}">
+            {% if task.done %}↩ Undo{% else %}✔ Done{% endif %}
+          </button>
+        </form>
+
+        <!-- Delete this task -->
+        <form action="{{ url_for('delete_task', task_id=task.id) }}" method="POST"
+              onsubmit="return confirm('Delete this task?')">
+          <button type="submit" class="btn btn-danger" title="Delete task">
+            🗑 Delete
+          </button>
+        </form>
+
+      </div>
+    </div>
+    {% endfor %}
+
+    <!-- Clear All button (only shown when there are tasks) -->
+    <div class="clear-section">
+      <form action="{{ url_for('clear_all') }}" method="POST"
+            onsubmit="return confirm('Delete ALL tasks? This cannot be undone.')">
+        <button type="submit" class="btn btn-clear">🧹 Clear All Tasks</button>
+      </form>
+    </div>
+
+  {% else %}
+    <!-- Empty state message -->
+    <div class="empty-state">
+      <div class="empty-icon">🎉</div>
+      <h2>All clear!</h2>
+      <p>No tasks yet. Add one above to get started.</p>
+    </div>
+  {% endif %}
+
+</div>
+
+{% endblock %}
