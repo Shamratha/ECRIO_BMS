@@ -1,4 +1,4 @@
-# ECRIO_BMS 🐍
+# ECRIO_BMS 
 
 > **E**ducational **C**ode **R**epository for **I**ntermediate to **O**riginal **B**eginner **M**entored **S**tudies
 
@@ -8,7 +8,7 @@ all following professional coding standards and ready to push to GitHub.
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 ECRIO_BMS/
@@ -32,7 +32,7 @@ ECRIO_BMS/
 
 ---
 
-## 🗂 Mini Projects Overview
+## Mini Projects Overview
 
 | # | Project | Key Concepts | Run Command |
 |---|---------|-------------|-------------|
@@ -46,7 +46,7 @@ ECRIO_BMS/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1 — Clone the repository
 ```bash
@@ -101,7 +101,7 @@ cp mini_project_3/datasets/titanic.csv mini_project_5/datasets/titanic.csv
 
 ---
 
-## 📤 Pushing to GitHub
+## Pushing to GitHub
 
 ```bash
 git init
@@ -116,5 +116,5 @@ See `docs/GITHUB_GUIDE.md` for the full step-by-step guide.
 
 ---
 
-## 📜 License
+## License
 MIT — free to use and learn from.
